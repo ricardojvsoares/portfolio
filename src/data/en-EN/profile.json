@@ -1,0 +1,10 @@
+{
+  "name": "RJ",
+  "role": "Full-stack engineer",
+  "headline": "Builds clear systems people can ship.",
+  "bio": "I design and ship web products with careful interfaces, solid APIs, and code other people can maintain. Most of my work sits between product design and backend systems — turning fuzzy requirements into something that runs in production.",
+  "shortBio": "I build web products end to end — interfaces, APIs, and the glue that keeps them honest.",
+  "location": "Somewhere online",
+  "email": "hello@example.com",
+  "resumeUrl": "/resume.pdf"
+}

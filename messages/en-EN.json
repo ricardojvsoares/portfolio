@@ -1,0 +1,70 @@
+{
+  "Meta": {
+    "aboutDescription": "Background, focus, and how I work.",
+    "contactDescription": "Get in touch about a project or role.",
+    "workDescription": "Selected projects and experiments.",
+    "projectFallback": "Project"
+  },
+  "Nav": {
+    "primary": "Primary",
+    "skip": "Skip to content"
+  },
+  "Hero": {
+    "viewWork": "View work",
+    "contact": "Contact"
+  },
+  "Home": {
+    "selectedWork": "Selected work",
+    "allProjects": "All projects",
+    "about": "About",
+    "readMore": "Read more"
+  },
+  "About": {
+    "title": "About",
+    "replaceHint": "Replace this copy in <path></path>.",
+    "contact": "Contact",
+    "resume": "Resume"
+  },
+  "Contact": {
+    "title": "Contact",
+    "intro": "Say hello about a role, collaboration, or question. The form below is a local mock — wire it to your inbox when you are ready.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Ada Lovelace…",
+    "emailPlaceholder": "ada@example.com…",
+    "messagePlaceholder": "What should we talk about…",
+    "send": "Send message",
+    "sending": "Sending…",
+    "orEmail": "Or email directly",
+    "sent": "Message captured locally — wire this form to your inbox later."
+  },
+  "Work": {
+    "title": "Work",
+    "intro": "Projects and experiments. Swap the mock entries in <path></path>.",
+    "empty": "No projects yet. Add entries in <path></path>.",
+    "live": "Live site",
+    "repo": "Repository",
+    "back": "← All projects"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "body": "That route does not exist. Head home or browse the project list.",
+    "home": "Home",
+    "work": "Work"
+  },
+  "Theme": {
+    "label": "Color theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme",
+    "toSystem": "Switch to system theme"
+  },
+  "Locale": {
+    "label": "Language",
+    "switchToEn": "Switch to English",
+    "switchToPt": "Mudar para português"
+  }
+}

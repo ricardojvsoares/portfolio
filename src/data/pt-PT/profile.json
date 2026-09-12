@@ -1,0 +1,10 @@
+{
+  "name": "RJ",
+  "role": "Engenheiro full-stack",
+  "headline": "Constrói sistemas claros que as pessoas conseguem lançar.",
+  "bio": "Desenho e lanço produtos web com interfaces cuidadosas, APIs sólidas e código que outras pessoas conseguem manter. A maior parte do meu trabalho fica entre design de produto e sistemas de backend — transformar requisitos difusos em algo que corre em produção.",
+  "shortBio": "Construo produtos web de ponta a ponta — interfaces, APIs e a cola que os mantém honestos.",
+  "location": "Em algum sítio online",
+  "email": "hello@example.com",
+  "resumeUrl": "/resume.pdf"
+}

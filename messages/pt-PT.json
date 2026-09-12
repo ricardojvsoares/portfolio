@@ -1,0 +1,70 @@
+{
+  "Meta": {
+    "aboutDescription": "Percurso, foco e forma de trabalhar.",
+    "contactDescription": "Contacta sobre um projeto ou oportunidade.",
+    "workDescription": "Projetos selecionados e experiências.",
+    "projectFallback": "Projeto"
+  },
+  "Nav": {
+    "primary": "Principal",
+    "skip": "Saltar para o conteúdo"
+  },
+  "Hero": {
+    "viewWork": "Ver trabalho",
+    "contact": "Contacto"
+  },
+  "Home": {
+    "selectedWork": "Trabalho selecionado",
+    "allProjects": "Todos os projetos",
+    "about": "Sobre",
+    "readMore": "Ler mais"
+  },
+  "About": {
+    "title": "Sobre",
+    "replaceHint": "Substitui este texto em <path></path>.",
+    "contact": "Contacto",
+    "resume": "Curriculum"
+  },
+  "Contact": {
+    "title": "Contacto",
+    "intro": "Diz olá sobre uma oportunidade, colaboração ou dúvida. O formulário abaixo é um mock local — liga-o à tua caixa de correio quando estiveres pronto.",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Mensagem",
+    "namePlaceholder": "Ada Lovelace…",
+    "emailPlaceholder": "ada@exemplo.com…",
+    "messagePlaceholder": "Sobre o que devemos falar…",
+    "send": "Enviar mensagem",
+    "sending": "A enviar…",
+    "orEmail": "Ou envia email diretamente",
+    "sent": "Mensagem guardada localmente — liga este formulário à tua caixa mais tarde."
+  },
+  "Work": {
+    "title": "Trabalho",
+    "intro": "Projetos e experiências. Troca as entradas mock em <path></path>.",
+    "empty": "Ainda sem projetos. Adiciona entradas em <path></path>.",
+    "live": "Site ao vivo",
+    "repo": "Repositório",
+    "back": "← Todos os projetos"
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "body": "Esse caminho não existe. Volta ao início ou explora a lista de projetos.",
+    "home": "Início",
+    "work": "Trabalho"
+  },
+  "Theme": {
+    "label": "Tema de cor",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "toLight": "Mudar para tema claro",
+    "toDark": "Mudar para tema escuro",
+    "toSystem": "Mudar para tema do sistema"
+  },
+  "Locale": {
+    "label": "Idioma",
+    "switchToEn": "Switch to English",
+    "switchToPt": "Mudar para português"
+  }
+}

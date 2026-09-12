@@ -1,0 +1,5 @@
+[
+  { "label": "Trabalho", "href": "/projects" },
+  { "label": "Sobre", "href": "/about" },
+  { "label": "Contacto", "href": "/contact" }
+]
