@@ -32,14 +32,6 @@ export function Hero({ profile }: { profile: Profile }) {
             {t("viewWork")}
           </Button>
           <Button
-            render={<Link href="/lab" />}
-            variant="outline"
-            size="lg"
-            className="rounded-md border-foreground/20 bg-card/60"
-          >
-            {t("openLab")}
-          </Button>
-          <Button
             render={<Link href="/contact" />}
             variant="ghost"
             size="lg"
