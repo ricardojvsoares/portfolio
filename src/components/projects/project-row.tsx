@@ -35,7 +35,7 @@ export function ProjectRow({ project }: { project: Project }) {
             "group-hover:translate-x-1"
           )}
         >
-          →
+          ›
         </span>
       </div>
     </Link>

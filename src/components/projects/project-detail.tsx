@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
+import { ArchitecturePanel } from "@/components/projects/architecture-panel";
 import type { Project } from "@/lib/content";
 
 export function ProjectDetail({ project }: { project: Project }) {
@@ -9,7 +10,7 @@ export function ProjectDetail({ project }: { project: Project }) {
 
   return (
     <article className="site-container py-14 sm:py-20">
-      <p className="font-mono text-sm text-primary tabular-nums">{project.year}</p>
+      <p className="font-mono text-sm text-phosphor tabular-nums">{project.year}</p>
       <h1 className="font-display mt-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
         {project.title}
       </h1>
@@ -51,6 +52,10 @@ export function ProjectDetail({ project }: { project: Project }) {
           <p key={paragraph.slice(0, 24)}>{paragraph}</p>
         ))}
       </div>
+
+      {project.architecture ? (
+        <ArchitecturePanel layers={project.architecture} />
+      ) : null}
 
       <p className="mt-14">
         <Link

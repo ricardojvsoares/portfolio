@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 
+import { MobileNav } from "@/components/layout/mobile-nav";
 import { BrandLink } from "@/components/layout/skip-link";
 import { getNav, getProfile } from "@/lib/content";
 
@@ -15,7 +16,10 @@ export async function SiteHeader({ controls }: { controls?: ReactNode }) {
       <div className="site-container flex h-14 items-center justify-between gap-4">
         <BrandLink name={profile.name} />
         <div className="flex items-center gap-1 sm:gap-2">
-          <nav aria-label={t("primary")} className="flex items-center gap-1 sm:gap-2">
+          <nav
+            aria-label={t("primary")}
+            className="hidden items-center gap-1 md:flex sm:gap-2"
+          >
             {nav.map((item) => (
               <Link
                 key={item.href}
@@ -26,6 +30,7 @@ export async function SiteHeader({ controls }: { controls?: ReactNode }) {
               </Link>
             ))}
           </nav>
+          <MobileNav items={nav} />
           {controls ? (
             <div className="ml-1 flex items-center gap-0.5 border-l border-border pl-2 sm:ml-2 sm:pl-3">
               {controls}

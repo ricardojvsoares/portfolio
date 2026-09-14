@@ -6,11 +6,30 @@
     "year": 2025,
     "tags": ["Next.js", "WebSockets", "Postgres"],
     "featured": true,
-    "links": {
-      "live": "https://example.com/signalboard",
-      "repo": "https://github.com/example/signalboard"
-    },
-    "body": "O Signalboard começou como um protótipo de fim de semana para vigiar trabalhos em segundo plano e cresceu até à superfície diária de operações de uma pequena equipa de plataforma. A parte difícil não foram os gráficos — foi manter a UI calma enquanto os eventos chegam em rajadas.\n\nConstruí um fluxo de eventos tipado, uma linha de tempo compacta de incidentes e filtros que ficam no URL para engenheiros de plantão partilharem vistas exactas. A latência ficou abaixo de algumas centenas de milissegundos num VPS modesto."
+    "links": {},
+    "body": "O Signalboard começou como um protótipo de fim de semana para vigiar trabalhos em segundo plano e cresceu até à superfície diária de operações de uma pequena equipa de plataforma. A parte difícil não foram os gráficos — foi manter a UI calma enquanto os eventos chegam em rajadas.\n\nConstruí um fluxo de eventos tipado, uma linha de tempo compacta de incidentes e filtros que ficam no URL para engenheiros de plantão partilharem vistas exactas. A latência ficou abaixo de algumas centenas de milissegundos num VPS modesto.",
+    "architecture": [
+      {
+        "label": "Client",
+        "detail": "UI Next.js com filtros no URL e linha de tempo calma de incidentes."
+      },
+      {
+        "label": "Realtime",
+        "detail": "Stream WebSocket tipado a partir dos heartbeats dos workers."
+      },
+      {
+        "label": "API",
+        "detail": "Handlers Node normalizam eventos e agregam incidentes."
+      },
+      {
+        "label": "DB",
+        "detail": "Postgres guarda incidentes, estado dos workers e fatias da timeline."
+      },
+      {
+        "label": "Workers",
+        "detail": "Runners distribuídos emitem estado e sinais de falha."
+      }
+    ]
   },
   {
     "slug": "ledger-lite",
@@ -19,34 +38,25 @@
     "year": 2024,
     "tags": ["TypeScript", "SQLite", "tRPC"],
     "featured": true,
-    "links": {
-      "repo": "https://github.com/example/ledger-lite"
-    },
-    "body": "O Ledger Lite mantém os dados financeiros locais. Uma CLI analisa CSVs bancários, uma pequena UI web revê categorias e tudo sincroniza através de um ficheiro SQLite local.\n\nA escolha de design interessante foi tratar a CLI como fonte de verdade e a app web como superfície de revisão — menos magia, auditorias mais fáceis."
-  },
-  {
-    "slug": "typepress",
-    "title": "Typepress",
-    "summary": "Kit de publicação Markdown-first com pré-visualizações de rascunho, geração de imagens OG e hooks de deploy sem configuração.",
-    "year": 2024,
-    "tags": ["MDX", "React", "Edge"],
-    "featured": true,
-    "links": {
-      "live": "https://example.com/typepress",
-      "repo": "https://github.com/example/typepress"
-    },
-    "body": "O Typepress é uma camada fina de publicação para quem já escreve em Markdown. Observa uma pasta de conteúdo, gera pré-visualizações ao guardar e cria cartões sociais no pedido.\n\nFoquei-me em fiabilidade aborrecida: frontmatter previsível, arranques frios rápidos e um caminho de deploy que cabe em hosts estáticos."
-  },
-  {
-    "slug": "harbor-api",
-    "title": "Harbor API",
-    "summary": "Pequeno toolkit REST com auth, limites de taxa e documentação OpenAPI gerada a partir de schemas Zod.",
-    "year": 2023,
-    "tags": ["Node", "Zod", "OpenAPI"],
-    "featured": false,
-    "links": {
-      "repo": "https://github.com/example/harbor-api"
-    },
-    "body": "O Harbor API empacota os padrões que eu continuava a reescrever: handlers tipados, validação de pedidos, limitação de taxa e docs que não podem divergir do código.\n\nOs schemas alimentam tanto as verificações em runtime como o documento OpenAPI, para os consumidores verem sempre o que o servidor aceita de facto."
+    "links": {},
+    "body": "O Ledger Lite mantém os dados financeiros locais. Uma CLI analisa CSVs bancários, uma pequena UI web revê categorias e tudo sincroniza através de um ficheiro SQLite local.\n\nA escolha de design interessante foi tratar a CLI como fonte de verdade e a app web como superfície de revisão — menos magia, auditorias mais fáceis.",
+    "architecture": [
+      {
+        "label": "CLI",
+        "detail": "Importador TypeScript analisa CSVs e escreve linhas categorizadas."
+      },
+      {
+        "label": "Web UI",
+        "detail": "Superfície de revisão para correções de categoria e vistas mensais."
+      },
+      {
+        "label": "tRPC",
+        "detail": "Procedimentos tipados entre a UI e o processo Node local."
+      },
+      {
+        "label": "SQLite",
+        "detail": "Ledger num único ficheiro — a verdade fica no disco."
+      }
+    ]
   }
 ]

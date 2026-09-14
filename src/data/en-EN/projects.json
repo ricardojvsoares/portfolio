@@ -6,11 +6,30 @@
     "year": 2025,
     "tags": ["Next.js", "WebSockets", "Postgres"],
     "featured": true,
-    "links": {
-      "live": "https://example.com/signalboard",
-      "repo": "https://github.com/example/signalboard"
-    },
-    "body": "Signalboard started as a weekend prototype for watching background jobs and grew into the daily ops surface for a small platform team. The hard part was not charts — it was keeping the UI calm while events arrive in bursts.\n\nI built a typed event stream, a compact incident timeline, and filters that stay in the URL so on-call engineers can share exact views. Latency stayed under a few hundred milliseconds on a modest VPS."
+    "links": {},
+    "body": "Signalboard started as a weekend prototype for watching background jobs and grew into the daily ops surface for a small platform team. The hard part was not charts — it was keeping the UI calm while events arrive in bursts.\n\nI built a typed event stream, a compact incident timeline, and filters that stay in the URL so on-call engineers can share exact views. Latency stayed under a few hundred milliseconds on a modest VPS.",
+    "architecture": [
+      {
+        "label": "Client",
+        "detail": "Next.js ops UI with URL-synced filters and calm incident timeline."
+      },
+      {
+        "label": "Realtime",
+        "detail": "Typed WebSocket event stream from worker fleet heartbeats."
+      },
+      {
+        "label": "API",
+        "detail": "Node handlers normalize events and write incident aggregates."
+      },
+      {
+        "label": "DB",
+        "detail": "Postgres stores incidents, worker state, and timeline slices."
+      },
+      {
+        "label": "Workers",
+        "detail": "Distributed job runners emit status + failure signals."
+      }
+    ]
   },
   {
     "slug": "ledger-lite",
@@ -22,31 +41,24 @@
     "links": {
       "repo": "https://github.com/example/ledger-lite"
     },
-    "body": "Ledger Lite keeps money data local. A CLI parses bank CSVs, a small web UI reviews categories, and everything syncs through a local SQLite file.\n\nThe interesting design choice was treating the CLI as the source of truth and the web app as a review surface — less magic, easier audits."
-  },
-  {
-    "slug": "typepress",
-    "title": "Typepress",
-    "summary": "Markdown-first publishing kit with draft previews, OG image generation, and zero-config deploy hooks.",
-    "year": 2024,
-    "tags": ["MDX", "React", "Edge"],
-    "featured": true,
-    "links": {
-      "live": "https://example.com/typepress",
-      "repo": "https://github.com/example/typepress"
-    },
-    "body": "Typepress is a thin publishing layer for people who already write in Markdown. It watches a content folder, builds previews on save, and generates social cards at request time.\n\nI focused on boring reliability: predictable frontmatter, fast cold starts, and a deploy path that fits static hosts."
-  },
-  {
-    "slug": "harbor-api",
-    "title": "Harbor API",
-    "summary": "Small REST toolkit with auth, rate limits, and OpenAPI docs generated from Zod schemas.",
-    "year": 2023,
-    "tags": ["Node", "Zod", "OpenAPI"],
-    "featured": false,
-    "links": {
-      "repo": "https://github.com/example/harbor-api"
-    },
-    "body": "Harbor API packages the patterns I kept rewriting: typed handlers, request validation, rate limiting, and docs that cannot drift from the code.\n\nSchemas drive both runtime checks and the OpenAPI document, so consumers always see what the server actually accepts."
+    "body": "Ledger Lite keeps money data local. A CLI parses bank CSVs, a small web UI reviews categories, and everything syncs through a local SQLite file.\n\nThe interesting design choice was treating the CLI as the source of truth and the web app as a review surface — less magic, easier audits.",
+    "architecture": [
+      {
+        "label": "CLI",
+        "detail": "TypeScript importer parses CSVs and writes categorized rows."
+      },
+      {
+        "label": "Web UI",
+        "detail": "Review surface for category corrections and month views."
+      },
+      {
+        "label": "tRPC",
+        "detail": "Typed procedures between UI and local Node process."
+      },
+      {
+        "label": "SQLite",
+        "detail": "Single-file ledger — source of truth stays on disk."
+      }
+    ]
   }
 ]

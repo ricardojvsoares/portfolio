@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+Full-stack engineer portfolio built with Next.js. The UI is an ops-console style surface; the `/lab` page exercises real APIs against Postgres.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS 4 + shadcn
+- next-intl (pt-PT / en-EN)
+- Postgres (Neon / Supabase / any) + Drizzle ORM + `postgres.js`
+- jose (signed httpOnly session cookies)
+- Zod validation + in-memory rate limits
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+cp .env.example .env
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fill in:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `DATABASE_URL` — Postgres URI (Neon or Supabase both work; add `?sslmode=require`)
+- `SESSION_SECRET` — random string, at least 32 characters
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Apply schema:
 
-## Learn More
+```bash
+pnpm db:push
+# or run drizzle/0000_init.sql in your SQL editor
+```
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Without env vars the site still renders; lab widgets show error/empty states.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+| Script | Purpose |
+|--------|---------|
+| `pnpm dev` | Local server |
+| `pnpm build` / `pnpm start` | Production |
+| `pnpm db:generate` | Generate migrations from schema |
+| `pnpm db:push` | Push schema to Postgres |
+| `pnpm db:migrate` | Run migrations |
+| `pnpm db:studio` | Drizzle Studio |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API surface
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Route | Notes |
+|-------|-------|
+| `GET /api/status` | Health + DB ping |
+| `GET /api/metrics` | Latency aggregates |
+| `GET/POST /api/guestbook` | Public read; POST needs session |
+| `POST /api/contact` | Validated contact persistence |
+| `GET/POST/DELETE /api/auth/session` | Demo cookie session |
+| `GET /api/presence` + `/api/presence/stream` | Visitor count (SSE) |
+| `GET/POST /api/playground/echo` | Rate-limited echo |
+
+## Deploy (Vercel)
+
+Set `DATABASE_URL` and `SESSION_SECRET` in the project env. Deploy as a standard Next.js app.

@@ -42,7 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: profile.headline,
     other: {
-      "theme-color": "#EEF1F4",
+      "theme-color": "#0A0F14",
     },
   };
 }
@@ -63,7 +63,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         "font-sans",
       )}
     >
-      <body className="paper-grid flex min-h-full flex-col">
+      <body className="signal-grid flex min-h-full flex-col">
         <NextIntlClientProvider messages={messages}>
           <Providers>
             <SkipLink />

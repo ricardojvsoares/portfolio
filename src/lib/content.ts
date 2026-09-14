@@ -29,6 +29,11 @@ export type ProjectLinks = {
   repo?: string;
 };
 
+export type ArchitectureLayer = {
+  label: string;
+  detail: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -38,6 +43,7 @@ export type Project = {
   featured: boolean;
   links: ProjectLinks;
   body: string;
+  architecture?: ArchitectureLayer[];
 };
 
 const catalog = {
