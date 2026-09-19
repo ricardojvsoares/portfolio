@@ -4,13 +4,15 @@ import { getProfile, getSocials } from "@/lib/content";
 
 export async function SiteFooter() {
   const profile = await getProfile();
-  const socials = (await getSocials()).filter((social) => social.id !== "email");
+  const socials = (await getSocials()).filter(
+    (social) => social.id !== "email",
+  );
   const year = new Date().getFullYear();
 
   return (
     <footer className="mt-auto border-t border-border bg-card">
       <div className="site-container flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-foreground">
           <span translate="no">{profile.name}</span>
           {" · "}
           <span className="tabular-nums">{year}</span>
@@ -20,7 +22,7 @@ export async function SiteFooter() {
             <li key={social.id}>
               <Link
                 href={social.href}
-                className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+                className="text-sm text-foreground transition-colors duration-200 hover:text-primary"
                 {...(social.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
@@ -32,7 +34,7 @@ export async function SiteFooter() {
           <li>
             <a
               href={`mailto:${profile.email}`}
-              className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+              className="text-sm text-foreground transition-colors duration-200 hover:text-primary"
             >
               {profile.email}
             </a>

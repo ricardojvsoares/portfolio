@@ -36,7 +36,7 @@ export function LanguageToggle() {
       aria-label={label}
       title={label}
       className={cn(
-        "locale-toggle rounded-md px-2 py-1.5 font-mono text-xs tracking-wide text-muted-foreground transition-[color,opacity,transform] duration-200 hover:text-foreground",
+        "locale-toggle rounded-md px-2 py-1.5 font-mono text-xs tracking-wide text-foreground transition-[color,opacity,transform] duration-200 hover:text-foreground",
         pending && "opacity-60",
       )}
     >

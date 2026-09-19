@@ -10,13 +10,17 @@ export function ProjectDetail({ project }: { project: Project }) {
 
   return (
     <article className="site-container py-14 sm:py-20">
-      <p className="font-mono text-sm text-phosphor tabular-nums">{project.year}</p>
+      <p className="font-mono text-sm text-phosphor tabular-nums">
+        {project.year}
+      </p>
       <h1 className="font-display mt-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
         {project.title}
       </h1>
-      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{project.summary}</p>
+      <p className="mt-4 max-w-2xl text-lg text-foreground">
+        {project.summary}
+      </p>
 
-      <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm text-muted-foreground">
+      <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm text-foreground">
         {project.tags.map((tag) => (
           <li key={tag} translate="no">
             {tag}
@@ -60,7 +64,7 @@ export function ProjectDetail({ project }: { project: Project }) {
       <p className="mt-14">
         <Link
           href="/projects"
-          className="font-mono text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+          className="font-mono text-sm text-foreground transition-colors duration-200 hover:text-primary"
         >
           {t("back")}
         </Link>

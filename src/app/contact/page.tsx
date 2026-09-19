@@ -16,7 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ContactPage() {
   const profile = await getProfile();
-  const socials = (await getSocials()).filter((social) => social.id !== "email");
+  const socials = (await getSocials()).filter(
+    (social) => social.id !== "email",
+  );
   const t = await getTranslations("Contact");
 
   return (
@@ -24,7 +26,7 @@ export default async function ContactPage() {
       <h1 className="font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
         {t("title")}
       </h1>
-      <p className="mt-4 max-w-xl text-lg text-muted-foreground">{t("intro")}</p>
+      <p className="mt-4 max-w-xl text-lg text-foreground">{t("intro")}</p>
 
       <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2">
         <li>
@@ -39,7 +41,7 @@ export default async function ContactPage() {
           <li key={social.id}>
             <Link
               href={social.href}
-              className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+              className="text-sm text-foreground transition-colors duration-200 hover:text-primary"
               {...(social.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}

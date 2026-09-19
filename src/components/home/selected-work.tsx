@@ -17,7 +17,7 @@ export function SelectedWork({ projects }: { projects: Project[] }) {
           </h2>
           <Link
             href="/projects"
-            className="font-mono text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+            className="font-mono text-sm text-foreground transition-colors duration-200 hover:text-primary"
           >
             {t("allProjects")}
           </Link>

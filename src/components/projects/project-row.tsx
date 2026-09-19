@@ -15,24 +15,24 @@ export function ProjectRow({ project }: { project: Project }) {
             {project.title}
           </span>
         </h3>
-        <p className="mt-1 line-clamp-2 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <p className="mt-1 line-clamp-2 max-w-xl text-sm leading-relaxed text-foreground/90 sm:text-base">
           {project.summary}
         </p>
       </div>
-      <ul className="flex min-w-0 flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-muted-foreground sm:text-sm">
+      <ul className="flex min-w-0 flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-foreground sm:text-sm">
         {project.tags.map((tag) => (
           <li key={tag} translate="no">
             {tag}
           </li>
         ))}
       </ul>
-      <div className="flex items-center gap-3 font-mono text-sm text-muted-foreground">
+      <div className="flex items-center gap-3 font-mono text-sm text-foreground">
         <span className="tabular-nums">{project.year}</span>
         <span
           aria-hidden="true"
           className={cn(
             "text-primary transition-transform duration-200",
-            "group-hover:translate-x-1"
+            "group-hover:translate-x-1",
           )}
         >
           ›

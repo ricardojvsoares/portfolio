@@ -19,7 +19,7 @@ export function Hero({ profile }: { profile: Profile }) {
         <p className="animate-rise-delay mt-5 font-mono text-sm tracking-wide text-phosphor sm:text-base">
           {profile.role}
         </p>
-        <p className="animate-rise-delay-2 mt-4 max-w-xl text-lg text-muted-foreground sm:text-xl">
+        <p className="animate-rise-delay-2 mt-4 max-w-xl text-lg text-foreground sm:text-xl">
           {profile.headline}
         </p>
         <div className="animate-rise-delay-3 mt-10 flex flex-wrap gap-3">

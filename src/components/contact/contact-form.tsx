@@ -70,7 +70,7 @@ export function ContactForm({ email }: { email: string }) {
             rows={5}
             autoComplete="off"
             placeholder={t("messagePlaceholder")}
-            className="w-full resize-y rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:border-primary"
+            className="w-full resize-y rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-foreground/70 focus-visible:border-primary"
           />
         </div>
 
@@ -80,13 +80,13 @@ export function ContactForm({ email }: { email: string }) {
           </Button>
           <a
             href={`mailto:${email}`}
-            className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+            className="text-sm text-foreground transition-colors duration-200 hover:text-primary"
           >
             {t("orEmail")}
           </a>
         </div>
 
-        <p aria-live="polite" className="min-h-5 text-sm text-muted-foreground">
+        <p aria-live="polite" className="min-h-5 text-sm text-foreground">
           {opened ? t("sent") : null}
         </p>
       </form>
@@ -127,7 +127,7 @@ function Field({
         required
         spellCheck={spellCheck}
         placeholder={placeholder}
-        className="w-full rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:border-primary"
+        className="w-full rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-foreground/70 focus-visible:border-primary"
       />
     </div>
   );

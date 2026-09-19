@@ -15,7 +15,7 @@ export function AboutTeaser({ profile }: { profile: Profile }) {
           <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             {t("about")}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-foreground sm:text-lg">
             {profile.shortBio}
           </p>
         </div>

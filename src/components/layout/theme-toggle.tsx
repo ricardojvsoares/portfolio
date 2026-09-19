@@ -39,7 +39,7 @@ export function ThemeToggle() {
       aria-label={mounted ? labelMap[next] : t("label")}
       title={mounted ? labelMap[next] : t("label")}
       className={cn(
-        "theme-toggle inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-[color,transform,opacity] duration-200 hover:text-foreground",
+        "theme-toggle inline-flex size-8 items-center justify-center rounded-md text-foreground transition-[color,transform,opacity] duration-200 hover:text-foreground",
       )}
     >
       <Icon

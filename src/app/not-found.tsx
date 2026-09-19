@@ -12,7 +12,7 @@ export default async function NotFound() {
       <h1 className="font-display mt-3 text-4xl font-semibold tracking-tight text-foreground">
         {t("title")}
       </h1>
-      <p className="mt-4 max-w-md text-muted-foreground">{t("body")}</p>
+      <p className="mt-4 max-w-md text-foreground">{t("body")}</p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Button render={<Link href="/" />} className="rounded-md">
           {t("home")}

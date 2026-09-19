@@ -24,7 +24,7 @@ export function ArchitecturePanel({ layers }: { layers: ArchitectureLayer[] }) {
         <span className="font-display text-xl font-semibold tracking-tight">
           {t("architecture")}
         </span>
-        <span className="font-mono text-sm text-muted-foreground" aria-hidden="true">
+        <span className="font-mono text-sm text-foreground" aria-hidden="true">
           {open ? "−" : "+"}
         </span>
       </button>
@@ -39,12 +39,12 @@ export function ArchitecturePanel({ layers }: { layers: ArchitectureLayer[] }) {
               <span className="font-mono text-xs text-phosphor sm:text-sm">
                 {layer.label}
               </span>
-              <span className="text-sm text-muted-foreground">{layer.detail}</span>
+              <span className="text-sm text-foreground">{layer.detail}</span>
             </li>
           ))}
         </ol>
         <div
-          className="mt-6 overflow-x-auto rounded-md border border-border bg-card/50 p-4 font-mono text-xs text-muted-foreground"
+          className="mt-6 overflow-x-auto rounded-md border border-border bg-card/50 p-4 font-mono text-xs text-foreground"
           aria-hidden="true"
         >
           <pre className="whitespace-pre">{renderAscii(layers)}</pre>

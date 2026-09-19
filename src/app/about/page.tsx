@@ -24,7 +24,7 @@ export default async function AboutPage() {
         {t("title")}
       </h1>
       <p className="mt-3 font-mono text-sm text-primary">{profile.role}</p>
-      <p className="mt-2 font-mono text-sm text-muted-foreground">
+      <p className="mt-2 font-mono text-sm text-foreground">
         {profile.location}
       </p>
 
