@@ -2,24 +2,24 @@
   {
     "slug": "signalboard",
     "title": "Signalboard",
-    "summary": "Realtime ops dashboard for a distributed worker fleet, with live status and incident timelines.",
+    "summary": "Real-time ops dashboard for a distributed worker fleet, with live status and incident timelines.",
     "year": 2025,
     "tags": ["Next.js", "WebSockets", "Postgres"],
     "featured": true,
     "links": {},
-    "body": "Signalboard started as a weekend prototype for watching background jobs and grew into the daily ops surface for a small platform team. The hard part was not charts — it was keeping the UI calm while events arrive in bursts.\n\nI built a typed event stream, a compact incident timeline, and filters that stay in the URL so on-call engineers can share exact views. Latency stayed under a few hundred milliseconds on a modest VPS.",
+    "body": "Signalboard started as a weekend prototype for monitoring background jobs and grew into the daily ops surface for a small platform team. The hard part was not the charts — it was keeping the UI calm while events arrive in bursts.\n\nI built a typed event stream, a compact incident timeline, and URL-persisted filters so on-call engineers can share exact views. Latency stayed under a few hundred milliseconds on a modest VPS.",
     "architecture": [
       {
         "label": "Client",
-        "detail": "Next.js ops UI with URL-synced filters and calm incident timeline."
+        "detail": "Next.js ops UI with URL-synced filters and a calm incident timeline."
       },
       {
         "label": "Realtime",
-        "detail": "Typed WebSocket event stream from worker fleet heartbeats."
+        "detail": "Typed WebSocket event stream driven by worker fleet heartbeats."
       },
       {
         "label": "API",
-        "detail": "Node handlers normalize events and write incident aggregates."
+        "detail": "Node handlers normalize events and aggregate incident data."
       },
       {
         "label": "DB",
@@ -27,21 +27,21 @@
       },
       {
         "label": "Workers",
-        "detail": "Distributed job runners emit status + failure signals."
+        "detail": "Distributed job runners emit status and failure signals."
       }
     ]
   },
   {
     "slug": "ledger-lite",
     "title": "Ledger Lite",
-    "summary": "Personal finance CLI and web companion that imports CSVs and reconciles categories without a bank login.",
+    "summary": "Personal finance CLI and web companion that imports CSVs and reconciles categories without requiring a bank login.",
     "year": 2024,
     "tags": ["TypeScript", "SQLite", "tRPC"],
     "featured": true,
     "links": {
       "repo": "https://github.com/example/ledger-lite"
     },
-    "body": "Ledger Lite keeps money data local. A CLI parses bank CSVs, a small web UI reviews categories, and everything syncs through a local SQLite file.\n\nThe interesting design choice was treating the CLI as the source of truth and the web app as a review surface — less magic, easier audits.",
+    "body": "Ledger Lite keeps financial data local. A CLI parses bank CSVs, a small web UI reviews categories, and everything syncs through a local SQLite file.\n\nThe interesting design choice was treating the CLI as the source of truth and the web app as a review surface — less magic, easier audits.",
     "architecture": [
       {
         "label": "CLI",
@@ -49,15 +49,15 @@
       },
       {
         "label": "Web UI",
-        "detail": "Review surface for category corrections and month views."
+        "detail": "Review surface for category corrections and monthly views."
       },
       {
         "label": "tRPC",
-        "detail": "Typed procedures between UI and local Node process."
+        "detail": "Typed procedures between the UI and local Node process."
       },
       {
         "label": "SQLite",
-        "detail": "Single-file ledger — source of truth stays on disk."
+        "detail": "Single-file ledger — the source of truth stays on disk."
       }
     ]
   }

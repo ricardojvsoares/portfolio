@@ -2,16 +2,16 @@
   {
     "slug": "signalboard",
     "title": "Signalboard",
-    "summary": "Painel de operações em tempo real para uma frota de workers distribuídos, com estado ao vivo e linhas de tempo de incidentes.",
+    "summary": "Painel de operações em tempo real para uma frota de workers distribuídos, com estado em tempo real e linhas de tempo de incidentes.",
     "year": 2025,
     "tags": ["Next.js", "WebSockets", "Postgres"],
     "featured": true,
     "links": {},
-    "body": "O Signalboard começou como um protótipo de fim de semana para vigiar trabalhos em segundo plano e cresceu até à superfície diária de operações de uma pequena equipa de plataforma. A parte difícil não foram os gráficos — foi manter a UI calma enquanto os eventos chegam em rajadas.\n\nConstruí um fluxo de eventos tipado, uma linha de tempo compacta de incidentes e filtros que ficam no URL para engenheiros de plantão partilharem vistas exactas. A latência ficou abaixo de algumas centenas de milissegundos num VPS modesto.",
+    "body": "O Signalboard começou como um protótipo de fim de semana para monitorizar trabalhos em segundo plano e cresceu até se tornar a superfície diária de operações de uma pequena equipa de plataforma. A parte difícil não foram os gráficos — foi manter a interface calma enquanto os eventos chegam em rajadas.\n\nConstruí um fluxo de eventos tipado, uma linha de tempo compacta de incidentes e filtros que ficam no URL, para que os engenheiros de serviço possam partilhar vistas exatas. A latência ficou abaixo de algumas centenas de milissegundos num VPS modesto.",
     "architecture": [
       {
         "label": "Client",
-        "detail": "UI Next.js com filtros no URL e linha de tempo calma de incidentes."
+        "detail": "Interface Next.js com filtros no URL e uma linha de tempo de incidentes simples e clara."
       },
       {
         "label": "Realtime",
@@ -23,35 +23,35 @@
       },
       {
         "label": "DB",
-        "detail": "Postgres guarda incidentes, estado dos workers e fatias da timeline."
+        "detail": "Postgres armazena incidentes, estado dos workers e segmentos da linha de tempo."
       },
       {
         "label": "Workers",
-        "detail": "Runners distribuídos emitem estado e sinais de falha."
+        "detail": "Runners distribuídos emitem estados e sinais de falha."
       }
     ]
   },
   {
     "slug": "ledger-lite",
     "title": "Ledger Lite",
-    "summary": "CLI de finanças pessoais e companheiro web que importa CSVs e reconcilia categorias sem login bancário.",
+    "summary": "CLI de finanças pessoais e aplicação web complementar que importa CSV e reconcilia categorias sem acesso à conta bancária.",
     "year": 2024,
     "tags": ["TypeScript", "SQLite", "tRPC"],
     "featured": true,
     "links": {},
-    "body": "O Ledger Lite mantém os dados financeiros locais. Uma CLI analisa CSVs bancários, uma pequena UI web revê categorias e tudo sincroniza através de um ficheiro SQLite local.\n\nA escolha de design interessante foi tratar a CLI como fonte de verdade e a app web como superfície de revisão — menos magia, auditorias mais fáceis.",
+    "body": "O Ledger Lite mantém os dados financeiros localmente. Uma CLI analisa ficheiros CSV bancários, uma pequena interface web permite rever categorias e tudo é sincronizado através de um ficheiro SQLite local.\n\nA escolha de design mais interessante foi tratar a CLI como fonte de verdade e a aplicação web como superfície de revisão — menos magia, auditorias mais fáceis.",
     "architecture": [
       {
         "label": "CLI",
-        "detail": "Importador TypeScript analisa CSVs e escreve linhas categorizadas."
+        "detail": "Importador TypeScript analisa ficheiros CSV e escreve linhas categorizadas."
       },
       {
         "label": "Web UI",
-        "detail": "Superfície de revisão para correções de categoria e vistas mensais."
+        "detail": "Superfície de revisão para correções de categorias e vistas mensais."
       },
       {
         "label": "tRPC",
-        "detail": "Procedimentos tipados entre a UI e o processo Node local."
+        "detail": "Procedimentos tipados entre a interface e o processo Node local."
       },
       {
         "label": "SQLite",
