@@ -13,6 +13,7 @@ import { getProfile } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
+import { GhostBackground } from "@/components/layout/ghost-background";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -63,9 +64,10 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         "font-sans",
       )}
     >
-      <body className="signal-grid flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col">
         <NextIntlClientProvider messages={messages}>
           <Providers>
+            <GhostBackground />
             <SkipLink />
             <SiteHeader
               controls={
