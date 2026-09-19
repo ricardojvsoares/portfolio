@@ -6,6 +6,11 @@
     "projectFallback": "Projeto"
   },
   "Nav": {
+    "groups": {
+      "explore": "Explorar",
+      "work": "Trabalho",
+      "connect": "Conectar"
+    },
     "primary": "Principal",
     "skip": "Ir para o conteúdo",
     "openMenu": "Abrir menu",
