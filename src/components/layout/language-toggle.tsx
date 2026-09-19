@@ -19,7 +19,7 @@ export function LanguageToggle() {
 
   const nextLocale: Locale = locale === "pt-PT" ? "en-EN" : "pt-PT";
   const label = nextLocale === "en-EN" ? t("switchToEn") : t("switchToPt");
-  const short = nextLocale === "en-EN" ? "EN" : "PT";
+  const short = nextLocale === "en-EN" ? "PT" : "EN";
 
   function switchLocale() {
     setLocaleCookie(nextLocale);
@@ -37,7 +37,7 @@ export function LanguageToggle() {
       title={label}
       className={cn(
         "locale-toggle rounded-md px-2 py-1.5 font-mono text-xs tracking-wide text-muted-foreground transition-[color,opacity,transform] duration-200 hover:text-foreground",
-        pending && "opacity-60"
+        pending && "opacity-60",
       )}
     >
       <span className="locale-toggle-label">{short}</span>
