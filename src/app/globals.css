@@ -254,36 +254,6 @@
     opacity: 0.5;
     transform: translateY(0.1rem);
   }
-
-  .terminal-cursor {
-    display: inline-block;
-    width: 0.55ch;
-    height: 1.1em;
-    margin-left: 1px;
-    vertical-align: text-bottom;
-    background: var(--phosphor);
-    animation: blink 1s step-end infinite;
-  }
-
-  .live-dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 9999px;
-    background: var(--phosphor);
-    box-shadow: 0 0 0 0 color-mix(in oklab, var(--phosphor) 55%, transparent);
-    animation: pulse-live 2s ease-out infinite;
-  }
-
-  .skeleton {
-    background: linear-gradient(
-      90deg,
-      var(--muted) 0%,
-      color-mix(in oklab, var(--muted) 60%, var(--foreground) 8%) 50%,
-      var(--muted) 100%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.4s ease-in-out infinite;
-  }
 }
 
 @keyframes rise {
@@ -294,33 +264,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-@keyframes pulse-live {
-  0% {
-    box-shadow: 0 0 0 0 color-mix(in oklab, var(--phosphor) 50%, transparent);
-  }
-  70% {
-    box-shadow: 0 0 0 0.45rem transparent;
-  }
-  100% {
-    box-shadow: 0 0 0 0 transparent;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
   }
 }
 
@@ -347,16 +290,6 @@
   .theme-toggle-icon,
   .locale-toggle-label {
     transition: none;
-  }
-
-  .terminal-cursor,
-  .live-dot,
-  .skeleton {
-    animation: none;
-  }
-
-  .live-dot {
-    box-shadow: none;
   }
 
   *,

@@ -3,7 +3,6 @@
     "aboutDescription": "Background, focus, and how I work.",
     "contactDescription": "Get in touch about a project or role.",
     "workDescription": "Selected projects and experiments.",
-    "labDescription": "Live APIs, guestbook, metrics, and realtime demos.",
     "projectFallback": "Project"
   },
   "Nav": {
@@ -14,14 +13,7 @@
   },
   "Hero": {
     "viewWork": "View work",
-    "openLab": "Open lab",
     "contact": "Contact"
-  },
-  "Terminal": {
-    "title": "live · /api/status",
-    "loading": "Waiting for response…",
-    "error": "Status check failed",
-    "unreachable": "Network error — API unreachable."
   },
   "Home": {
     "selectedWork": "Selected work",
@@ -37,7 +29,7 @@
   },
   "Contact": {
     "title": "Contact",
-    "intro": "Say hello about a role, collaboration, or question. Messages persist in Postgres with server-side validation.",
+    "intro": "Say hello about a role, collaboration, or question.",
     "name": "Name",
     "email": "Email",
     "message": "Message",
@@ -45,10 +37,8 @@
     "emailPlaceholder": "geral.ricardosoares@gmail.com…",
     "messagePlaceholder": "What should we talk about…",
     "send": "Send message",
-    "sending": "Sending…",
     "orEmail": "Or email directly",
-    "sent": "Message saved.",
-    "error": "Could not send. Check the fields and try again."
+    "sent": "Opening your email client…"
   },
   "Work": {
     "title": "Work",
@@ -58,45 +48,6 @@
     "repo": "Repository",
     "back": "All projects",
     "architecture": "How it’s built"
-  },
-  "Lab": {
-    "title": "Lab",
-    "intro": "Working backend demos on this site: playground, guestbook, presence, and metrics.",
-    "presenceTitle": "Live visitors",
-    "presenceLoading": "Connecting…",
-    "presenceError": "Presence stream offline.",
-    "presenceCount": "{count, plural, =0 {No visitors} one {# visitor online} other {# visitors online}}",
-    "metricsTitle": "API metrics",
-    "metricsLoading": "Loading metrics…",
-    "metricsError": "Metrics unavailable.",
-    "metricsEmpty": "No requests recorded yet. Hit the playground.",
-    "metricsRequests": "Requests",
-    "metricsP50": "p50",
-    "metricsP95": "p95",
-    "playgroundTitle": "API playground",
-    "playgroundIntro": "Send a live request to this portfolio’s own endpoints.",
-    "playgroundSend": "Send",
-    "playgroundSending": "Sending…",
-    "playgroundPath": "Endpoint",
-    "playgroundBody": "JSON body",
-    "playgroundResponse": "Response",
-    "guestbookTitle": "Guestbook",
-    "guestbookIntro": "Leave a short note. Writing requires a demo session cookie.",
-    "guestbookEmpty": "No entries yet.",
-    "guestbookLoading": "Loading entries…",
-    "guestbookError": "Could not load guestbook.",
-    "guestbookBody": "Note",
-    "guestbookPlaceholder": "Nice stack…",
-    "guestbookSubmit": "Post note",
-    "guestbookSubmitting": "Posting…",
-    "authTitle": "Auth demo",
-    "authIntro": "Sign in with a display name. Sets an httpOnly signed cookie — no OAuth provider.",
-    "authName": "Display name",
-    "authPlaceholder": "Ada…",
-    "authSignIn": "Sign in",
-    "authSigningIn": "Signing in…",
-    "authSignOut": "Sign out",
-    "authSignedIn": "Signed in as {name}"
   },
   "NotFound": {
     "title": "Page not found",

@@ -3,7 +3,6 @@
     "aboutDescription": "Percurso, foco e forma de trabalhar.",
     "contactDescription": "Contacta sobre um projeto ou oportunidade.",
     "workDescription": "Projetos selecionados e experiências.",
-    "labDescription": "APIs ao vivo, guestbook, métricas e demos em tempo real.",
     "projectFallback": "Projeto"
   },
   "Nav": {
@@ -14,14 +13,7 @@
   },
   "Hero": {
     "viewWork": "Ver trabalho",
-    "openLab": "Abrir lab",
     "contact": "Contacto"
-  },
-  "Terminal": {
-    "title": "ao vivo · /api/status",
-    "loading": "À espera da resposta…",
-    "error": "Falha no estado",
-    "unreachable": "Erro de rede — API inacessível."
   },
   "Home": {
     "selectedWork": "Trabalho selecionado",
@@ -37,7 +29,7 @@
   },
   "Contact": {
     "title": "Contacto",
-    "intro": "Diz olá sobre uma oportunidade, colaboração ou dúvida. As mensagens ficam no Postgres com validação no servidor.",
+    "intro": "Diz olá sobre uma oportunidade, colaboração ou dúvida.",
     "name": "Nome",
     "email": "Email",
     "message": "Mensagem",
@@ -45,10 +37,8 @@
     "emailPlaceholder": "ada@exemplo.com…",
     "messagePlaceholder": "Sobre o que devemos falar…",
     "send": "Enviar mensagem",
-    "sending": "A enviar…",
     "orEmail": "Ou envia email diretamente",
-    "sent": "Mensagem guardada.",
-    "error": "Não foi possível enviar. Verifica os campos e tenta de novo."
+    "sent": "A abrir o cliente de email…"
   },
   "Work": {
     "title": "Trabalho",
@@ -58,45 +48,6 @@
     "repo": "Repositório",
     "back": "Todos os projetos",
     "architecture": "Como está construído"
-  },
-  "Lab": {
-    "title": "Lab",
-    "intro": "Demos de backend a funcionar neste site: playground, guestbook, presença e métricas.",
-    "presenceTitle": "Visitantes ao vivo",
-    "presenceLoading": "A ligar…",
-    "presenceError": "Stream de presença offline.",
-    "presenceCount": "{count, plural, =0 {Sem visitantes} one {# visitante online} other {# visitantes online}}",
-    "metricsTitle": "Métricas da API",
-    "metricsLoading": "A carregar métricas…",
-    "metricsError": "Métricas indisponíveis.",
-    "metricsEmpty": "Ainda sem pedidos. Usa o playground.",
-    "metricsRequests": "Pedidos",
-    "metricsP50": "p50",
-    "metricsP95": "p95",
-    "playgroundTitle": "API playground",
-    "playgroundIntro": "Envia um pedido ao vivo aos endpoints deste portfolio.",
-    "playgroundSend": "Enviar",
-    "playgroundSending": "A enviar…",
-    "playgroundPath": "Endpoint",
-    "playgroundBody": "Corpo JSON",
-    "playgroundResponse": "Resposta",
-    "guestbookTitle": "Guestbook",
-    "guestbookIntro": "Deixa uma nota curta. Escrever exige um cookie de sessão demo.",
-    "guestbookEmpty": "Ainda sem entradas.",
-    "guestbookLoading": "A carregar entradas…",
-    "guestbookError": "Não foi possível carregar o guestbook.",
-    "guestbookBody": "Nota",
-    "guestbookPlaceholder": "Boa stack…",
-    "guestbookSubmit": "Publicar nota",
-    "guestbookSubmitting": "A publicar…",
-    "authTitle": "Demo de auth",
-    "authIntro": "Entra com um nome. Define um cookie httpOnly assinado — sem OAuth.",
-    "authName": "Nome de exibição",
-    "authPlaceholder": "Ada…",
-    "authSignIn": "Entrar",
-    "authSigningIn": "A entrar…",
-    "authSignOut": "Sair",
-    "authSignedIn": "Sessão como {name}"
   },
   "NotFound": {
     "title": "Página não encontrada",

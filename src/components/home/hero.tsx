@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import { StatusTerminal } from "@/components/home/status-terminal";
 import { Button } from "@/components/ui/button";
 import type { Profile } from "@/lib/content";
 
@@ -41,7 +40,6 @@ export function Hero({ profile }: { profile: Profile }) {
           </Button>
         </div>
       </div>
-      <StatusTerminal />
     </section>
   );
 }

@@ -4,53 +4,30 @@ import { useTranslations } from "next-intl";
 import { FormEvent, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import type { ApiErrorBody } from "@/lib/api/response";
-
-type Status = "idle" | "submitting" | "sent" | "error";
 
 export function ContactForm({ email }: { email: string }) {
   const t = useTranslations("Contact");
-  const [status, setStatus] = useState<Status>("idle");
-  const [fields, setFields] = useState<Record<string, string[]>>({});
-  const [formError, setFormError] = useState<string | null>(null);
+  const [opened, setOpened] = useState(false);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === "submitting") return;
-
     const form = event.currentTarget;
     const data = new FormData(form);
-    setStatus("submitting");
-    setFields({});
-    setFormError(null);
+    const name = String(data.get("name") ?? "").trim();
+    const from = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: String(data.get("name") ?? ""),
-          email: String(data.get("email") ?? ""),
-          message: String(data.get("message") ?? ""),
-        }),
-      });
+    const subject = encodeURIComponent(
+      name ? `Portfolio contact — ${name}` : "Portfolio contact",
+    );
+    const body = encodeURIComponent(
+      [name && `Name: ${name}`, from && `Email: ${from}`, "", message]
+        .filter(Boolean)
+        .join("\n"),
+    );
 
-      if (!res.ok) {
-        const body = (await res.json().catch(() => null)) as ApiErrorBody | null;
-        setFields(body?.fields ?? {});
-        setFormError(body?.error ?? t("error"));
-        setStatus("error");
-        const firstInvalid = form.querySelector<HTMLElement>("[aria-invalid='true']");
-        firstInvalid?.focus();
-        return;
-      }
-
-      form.reset();
-      setStatus("sent");
-    } catch {
-      setFormError(t("error"));
-      setStatus("error");
-    }
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    setOpened(true);
   }
 
   return (
@@ -67,7 +44,6 @@ export function ContactForm({ email }: { email: string }) {
           type="text"
           autoComplete="name"
           placeholder={t("namePlaceholder")}
-          errors={fields.name}
           spellCheck={false}
         />
         <Field
@@ -78,7 +54,6 @@ export function ContactForm({ email }: { email: string }) {
           inputMode="email"
           autoComplete="email"
           placeholder={t("emailPlaceholder")}
-          errors={fields.email}
           spellCheck={false}
         />
         <div className="space-y-2">
@@ -95,24 +70,13 @@ export function ContactForm({ email }: { email: string }) {
             rows={5}
             autoComplete="off"
             placeholder={t("messagePlaceholder")}
-            aria-invalid={Boolean(fields.message)}
-            aria-describedby={fields.message ? "message-error" : undefined}
             className="w-full resize-y rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:border-primary"
           />
-          {fields.message ? (
-            <p id="message-error" className="text-sm text-destructive">
-              {fields.message.join(" ")}
-            </p>
-          ) : null}
         </div>
 
         <div className="flex flex-wrap items-center gap-4">
-          <Button
-            type="submit"
-            disabled={status === "submitting"}
-            className="rounded-md"
-          >
-            {status === "submitting" ? t("sending") : t("send")}
+          <Button type="submit" className="rounded-md">
+            {t("send")}
           </Button>
           <a
             href={`mailto:${email}`}
@@ -123,10 +87,7 @@ export function ContactForm({ email }: { email: string }) {
         </div>
 
         <p aria-live="polite" className="min-h-5 text-sm text-muted-foreground">
-          {status === "sent" ? t("sent") : null}
-          {status === "error" && formError ? (
-            <span className="text-destructive">{formError}</span>
-          ) : null}
+          {opened ? t("sent") : null}
         </p>
       </form>
     </div>
@@ -140,7 +101,6 @@ function Field({
   type,
   autoComplete,
   placeholder,
-  errors,
   spellCheck,
   inputMode,
 }: {
@@ -150,7 +110,6 @@ function Field({
   type: string;
   autoComplete: string;
   placeholder: string;
-  errors?: string[];
   spellCheck?: boolean;
   inputMode?: "email";
 }) {
@@ -168,15 +127,8 @@ function Field({
         required
         spellCheck={spellCheck}
         placeholder={placeholder}
-        aria-invalid={Boolean(errors)}
-        aria-describedby={errors ? `${id}-error` : undefined}
         className="w-full rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:border-primary"
       />
-      {errors ? (
-        <p id={`${id}-error`} className="text-sm text-destructive">
-          {errors.join(" ")}
-        </p>
-      ) : null}
     </div>
   );
 }
