@@ -1,22 +1,22 @@
 {
   "Meta": {
     "aboutDescription": "Percurso, foco e forma de trabalhar.",
-    "contactDescription": "Contacta sobre um projeto ou oportunidade.",
-    "workDescription": "Projetos selecionados e experiências.",
+    "contactDescription": "Entre em contacto sobre um projeto ou uma oportunidade.",
+    "workDescription": "Projetos e experiências selecionados.",
     "projectFallback": "Projeto"
   },
   "Nav": {
     "primary": "Principal",
-    "skip": "Saltar para o conteúdo",
+    "skip": "Ir para o conteúdo",
     "openMenu": "Abrir menu",
     "closeMenu": "Fechar menu"
   },
   "Hero": {
-    "viewWork": "Ver trabalho",
+    "viewWork": "Ver projetos",
     "contact": "Contacto"
   },
   "Home": {
-    "selectedWork": "Trabalho selecionado",
+    "selectedWork": "Projetos selecionados",
     "allProjects": "Todos os projetos",
     "about": "Sobre",
     "readMore": "Ler mais"
@@ -25,47 +25,47 @@
     "title": "Sobre",
     "replaceHint": "Substitui este texto em <path></path>.",
     "contact": "Contacto",
-    "resume": "Curriculum"
+    "resume": "Currículo"
   },
   "Contact": {
     "title": "Contacto",
-    "intro": "Diz olá sobre uma oportunidade, colaboração ou dúvida.",
+    "intro": "Entre em contacto sobre uma oportunidade, colaboração ou dúvida.",
     "name": "Nome",
     "email": "Email",
     "message": "Mensagem",
-    "namePlaceholder": "Ada Lovelace…",
-    "emailPlaceholder": "ada@exemplo.com…",
+    "namePlaceholder": "Ricardo Soares…",
+    "emailPlaceholder": "geral.ricardosoares@gmail.com…",
     "messagePlaceholder": "Sobre o que devemos falar…",
     "send": "Enviar mensagem",
-    "orEmail": "Ou envia email diretamente",
+    "orEmail": "Ou envie um email diretamente",
     "sent": "A abrir o cliente de email…"
   },
   "Work": {
-    "title": "Trabalho",
-    "intro": "Projetos e experiências. Troca as entradas mock em <path></path>.",
-    "empty": "Ainda sem projetos. Adiciona entradas em <path></path>.",
-    "live": "Site ao vivo",
+    "title": "Projetos",
+    "intro": "Projetos e experiências. Substitui as entradas de exemplo em <path></path>.",
+    "empty": "Ainda não existem projetos. Adiciona entradas em <path></path>.",
+    "live": "Site online",
     "repo": "Repositório",
     "back": "Todos os projetos",
-    "architecture": "Como está construído"
+    "architecture": "Como foi construído"
   },
   "NotFound": {
     "title": "Página não encontrada",
-    "body": "Esse caminho não existe. Volta ao início ou explora a lista de projetos.",
+    "body": "Esse caminho não existe. Volta ao início ou consulta a lista de projetos.",
     "home": "Início",
-    "work": "Trabalho"
+    "work": "Projetos"
   },
   "Theme": {
-    "label": "Tema de cor",
+    "label": "Tema de cores",
     "light": "Claro",
     "dark": "Escuro",
     "system": "Sistema",
-    "toLight": "Mudar para tema claro",
-    "toDark": "Mudar para tema escuro",
-    "toSystem": "Mudar para tema do sistema"
+    "toLight": "Mudar para o tema claro",
+    "toDark": "Mudar para o tema escuro",
+    "toSystem": "Mudar para o tema do sistema"
   },
   "Locale": {
-    "switchToEn": "Switch to English",
+    "switchToEn": "Mudar para inglês",
     "switchToPt": "Mudar para português"
   }
 }
