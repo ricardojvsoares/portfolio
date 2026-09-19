@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans, Syne } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-
+import { Analytics } from "@vercel/analytics/next";
 import { LanguageToggle } from "@/components/layout/language-toggle";
 import { Providers } from "@/components/layout/providers";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -79,6 +79,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             />
             <main id="main" className="flex flex-1 flex-col">
               {children}
+              <Analytics />
             </main>
             <SiteFooter />
           </Providers>
