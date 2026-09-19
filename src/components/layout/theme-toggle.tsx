@@ -7,7 +7,7 @@ import { useSyncExternalStore } from "react";
 
 import { cn } from "@/lib/utils";
 
-const order = ["light", "dark", "system"] as const;
+const order = ["light", "dark"] as const;
 
 function subscribe() {
   return () => {};
@@ -16,15 +16,18 @@ function subscribe() {
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const t = useTranslations("Theme");
-  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+  const mounted = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
 
-  const current = (theme as (typeof order)[number] | undefined) ?? "system";
+  const current = (theme as (typeof order)[number] | undefined) ?? "dark";
   const next = order[(order.indexOf(current) + 1) % order.length];
 
   const labelMap = {
     light: t("toLight"),
     dark: t("toDark"),
-    system: t("toSystem"),
   } as const;
 
   const Icon = current === "dark" ? Moon : current === "light" ? Sun : Monitor;
@@ -36,7 +39,7 @@ export function ThemeToggle() {
       aria-label={mounted ? labelMap[next] : t("label")}
       title={mounted ? labelMap[next] : t("label")}
       className={cn(
-        "theme-toggle inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-[color,transform,opacity] duration-200 hover:text-foreground"
+        "theme-toggle inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-[color,transform,opacity] duration-200 hover:text-foreground",
       )}
     >
       <Icon
