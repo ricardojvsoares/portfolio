@@ -184,43 +184,43 @@ const CardNav = ({
   return (
     <div
       className={cn(
-        "card-nav-container fixed left-1/2 top-3 z-99 w-[90%] max-w-200 -translate-x-1/2 md:top-5",
+        "card-nav-container fixed left-1/2 top-3 z-[99] w-[90%] max-w-[800px] -translate-x-1/2 md:top-5",
         className,
       )}
     >
       <nav
         ref={navRef}
         aria-label={navLabel}
-        className="card-nav relative block h-15 overflow-hidden rounded-xl border border-border bg-background/85 p-0 shadow-md backdrop-blur-md will-change-[height]"
+        className="card-nav relative block h-[60px] overflow-hidden rounded-xl border border-border bg-background/85 p-0 shadow-md backdrop-blur-md will-change-[height]"
       >
-        <div className="card-nav-top absolute inset-x-0 top-0 z-2 flex h-h-15tems-center justify-between p-2 pl-[1.1rem]">
+        <div className="card-nav-top absolute inset-x-0 top-0 z-[2] flex h-[60px] items-center justify-between p-2 pl-[1.1rem]">
           <button
             type="button"
             onClick={isExpanded ? closeMenu : openMenu}
             aria-label={isExpanded ? closeLabel : openLabel}
             aria-expanded={isExpanded}
-            className="hamburger-menu group order-3 flex h-full cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md px-1 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:order-0"
+            className="hamburger-menu group order-3 flex h-full cursor-pointer flex-col items-center justify-center gap-[6px] rounded-md px-1 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:order-none"
           >
             <span
               className={cn(
-                "hamburger-line h-0.5 w-7.5 bg-current transition-[transform,opacity,margin] duration-300 ease-linear origin-[50%_50%] group-hover:opacity-75",
-                isHamburgerOpen && "translate-y-1 rotate-45",
+                "hamburger-line h-[2px] w-[30px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] group-hover:opacity-75",
+                isHamburgerOpen && "translate-y-[4px] rotate-45",
               )}
             />
             <span
               className={cn(
-                "hamburger-line h-0.5 w-7.5 bg-current transition-[transform,opacity,margin] duration-300 ease-linear origin-[50%_50%] group-hover:opacity-75",
-                isHamburgerOpen && "-translate-y-1 -rotate-45",
+                "hamburger-line h-[2px] w-[30px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] group-hover:opacity-75",
+                isHamburgerOpen && "-translate-y-[4px] -rotate-45",
               )}
             />
           </button>
 
-          <div className="logo-container order-1 flex items-center md:absolute md:left-1/2 md:top-1/2 md:order-0 md:-translate-x-1/2 md:-translate-y-1/2">
+          <div className="logo-container order-1 flex items-center md:absolute md:left-1/2 md:top-1/2 md:order-none md:-translate-x-1/2 md:-translate-y-1/2">
             {brand}
           </div>
 
           {controls ? (
-            <div className="card-nav-controls order-2 ml-auto mr-1 flex items-center gap-0.5 md:order-0 md:ml-0 md:mr-0">
+            <div className="card-nav-controls order-2 ml-auto mr-1 flex items-center gap-0.5 md:order-none md:ml-0 md:mr-0">
               {controls}
             </div>
           ) : null}
@@ -228,7 +228,7 @@ const CardNav = ({
 
         <div
           className={cn(
-            "card-nav-content absolute inset-x-0 bottom-0 top-15 z-1 flex flex-col items-stretch justify-start gap-2 p-2 md:flex-row md:items-end md:gap-3",
+            "card-nav-content absolute inset-x-0 bottom-0 top-[60px] z-[1] flex flex-col items-stretch justify-start gap-2 p-2 md:flex-row md:items-end md:gap-3",
             isExpanded
               ? "visible pointer-events-auto"
               : "invisible pointer-events-none",
@@ -239,18 +239,18 @@ const CardNav = ({
             <div
               key={`${item.label}-${idx}`}
               ref={setCardRef(idx)}
-              className="nav-card relative flex min-h-15 min-w-0 flex-[1_1_auto] select-none flex-col gap-2 rounded-lg border border-border/60 bg-card p-[12px_16px] text-card-foreground md:h-full md:min-h-0 md:flex-[1_1_0%]"
+              className="nav-card relative flex min-h-[60px] min-w-0 flex-[1_1_auto] select-none flex-col gap-2 rounded-lg border border-border/60 bg-card p-[12px_16px] text-card-foreground md:h-full md:min-h-0 md:flex-[1_1_0%]"
             >
               <div className="nav-card-label text-[18px] font-normal tracking-[-0.5px] md:text-[22px]">
                 {item.label}
               </div>
-              <div className="nav-card-links mt-auto flex flex-col gap-0.5">
+              <div className="nav-card-links mt-auto flex flex-col gap-[2px]">
                 {item.links.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={closeMenu}
-                    className="nav-card-link inline-flex cursor-pointer items-center gap-1.5 text-[15px] no-underline transition-opacity duration-300 hover:opacity-75 focus-visible:opacity-75 md:text-[16px]"
+                    className="nav-card-link inline-flex cursor-pointer items-center gap-[6px] text-[15px] no-underline transition-opacity duration-300 hover:opacity-75 focus-visible:opacity-75 md:text-[16px]"
                   >
                     <ArrowUpRight
                       className="nav-card-link-icon size-4 shrink-0"
