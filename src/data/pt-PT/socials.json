@@ -2,19 +2,19 @@
   {
     "id": "github",
     "label": "GitHub",
-    "href": "https://github.com/example",
+    "href": "https://github.com/ricardojvsoares",
     "external": true
   },
   {
     "id": "linkedin",
     "label": "LinkedIn",
-    "href": "https://linkedin.com/in/example",
+    "href": "https://www.linkedin.com/in/ricardojvsoares/",
     "external": true
   },
   {
     "id": "email",
     "label": "Email",
-    "href": "mailto:hello@example.com",
+    "href": "mailto:geral.ricardosoares@gmail.com",
     "external": false
   }
 ]

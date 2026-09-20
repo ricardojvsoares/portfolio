@@ -39,7 +39,7 @@
     "tags": ["TypeScript", "SQLite", "tRPC"],
     "featured": true,
     "links": {
-      "repo": "https://github.com/example/ledger-lite"
+     
     },
     "body": "Ledger Lite keeps financial data local. A CLI parses bank CSVs, a small web UI reviews categories, and everything syncs through a local SQLite file.\n\nThe interesting design choice was treating the CLI as the source of truth and the web app as a review surface — less magic, easier audits.",
     "architecture": [
